@@ -4,6 +4,7 @@ import auth from '../../firebase/firebase.config';
 import { useState } from 'react';
 import { FaEyeSlash } from 'react-icons/fa';
 import { IoEyeSharp } from 'react-icons/io5';
+import { Link } from 'react-router-dom';
 const Register = () => {
     const [registerError, setRegisterError] = useState(" ");
     const [success, setSuccess] = useState(" ");
@@ -29,15 +30,15 @@ const Register = () => {
 
 
 
-        console.log(email, pass);
+        // console.log(email, pass);
         createUserWithEmailAndPassword(auth, email, pass)
         .then(res =>{
             console.log(res.user);
-            setSuccess("User created Successfully")
+            setSuccess("User created Successfully");
         })
         .catch(error =>{
             console.error(error.message);
-            setRegisterError(error.message)
+            setRegisterError(error.message);
         })
     }
     return (
@@ -53,6 +54,8 @@ const Register = () => {
                         {showPass ? <IoEyeSharp></IoEyeSharp> :<FaEyeSlash></FaEyeSlash>}
                     </span>
                     <button type="submit">Submit</button>
+                    <p>Already have account? <Link to='/login'>Login</Link></p>
+
                 </form>
                 {
                     registerError && <p className='err-msg'>{registerError}</p>

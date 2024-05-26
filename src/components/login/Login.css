@@ -55,3 +55,18 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+
+.err-msg{
+    color: red;
+    padding-top: 10px;
+}
+.suc-msg{
+    color: green;
+    padding-top: 10px;
+}
+.forgot{
+    margin-bottom: 10px;
+}
+.forgot:hover{
+    text-decoration: underline;
+}
