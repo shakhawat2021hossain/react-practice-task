@@ -1,0 +1,83 @@
+/* .form-comp{
+    width: 100%;
+    background: #EEEEEE;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form{
+    width: 500px;
+    height: 400px;
+    margin: 100px auto;
+    background-color: #615EFC;
+}
+form .input-box{
+    width: 80%;
+    margin: 0 auto;
+}
+form input{
+    width: 100%;
+    border: none;
+    padding: 4px 10px;
+    margin-bottom: 4px;
+}
+form h1{
+    text-align: center;
+} */
+
+
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    margin: 100px auto;
+}
+
+.err-msg{
+    color: red;
+    padding-top: 10px;
+}
+.suc-msg{
+    color: green;
+    padding-top: 10px;
+}
+
+.create-account-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.create-account-form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.create-account-form label {
+    margin-bottom: 5px;
+}
+
+.create-account-form input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.create-account-form button {
+    padding: 10px;
+    background-color: #615EFC;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.create-account-form button:hover {
+    background-color: #0056b3;
+}

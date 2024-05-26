@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+20&family=Jersey+25+Charted&display=swap');
+
+.home-container{
+    width: 100%;
+    background: #615EFC;
+    color: white;
+}
+.home-full{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.half{
+    width: 45%;
+}
+h1{
+    font-size: 50px;
+}
+.logo{
+    font-family: "Jersey 25 Charted", sans-serif;
+    font-weight:400;
+    font-style: normal;
+    
+}
