@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, sendEmailVerification, updateProfile } from 'firebase/auth';
 import './Register.css'
 import auth from '../../firebase/firebase.config';
 import { useState } from 'react';
@@ -13,6 +13,7 @@ const Register = () => {
     const handleRegister = (e) => {
         e.preventDefault();
         // console.log('form submitting');
+        const name = e.target.name.value;
         const email = e.target.email.value;
         const pass = e.target.password.value;
 
@@ -30,11 +31,23 @@ const Register = () => {
 
 
 
-        // console.log(email, pass);
+        console.log(name, email, pass);
         createUserWithEmailAndPassword(auth, email, pass)
         .then(res =>{
             console.log(res.user);
             setSuccess("User created Successfully");
+
+            //update profile
+            updateProfile(res.user, {
+                displayName: name,
+                photoURL: "https://example.com/jane-q-user/profile.jpg"
+            })
+
+            //send verification email
+            sendEmailVerification(res.user)
+            .then(() => {
+                alert("Check your mail box and verify account");
+            })
         })
         .catch(error =>{
             console.error(error.message);
@@ -46,10 +59,31 @@ const Register = () => {
             <div className="container">
                 <form onSubmit={handleRegister} className="create-account-form">
                     <h2>Create Account</h2>
+
+                    <label>Name:</label>
+                    <input 
+                    type="text" 
+                    id="name" 
+                    name="name" 
+                    required>
+                    </input>
+
                     <label>Email:</label>
-                    <input type="email" id="email" name="email" required></input>
+                    <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    required>
+                    </input>
+
                     <label>Password:</label>
-                    <input type={showPass ? "text" : "password"} id="password" name="password" required></input>
+                    <input 
+                    type={showPass ? "text" : "password"} 
+                    id="password" 
+                    name="password" 
+                    required>
+                    </input>
+
                     <span onClick={()=> setShowPass(!showPass)}>
                         {showPass ? <IoEyeSharp></IoEyeSharp> :<FaEyeSlash></FaEyeSlash>}
                     </span>
