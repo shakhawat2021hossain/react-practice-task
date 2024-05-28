@@ -80,14 +80,6 @@
       "origin": "France",
       "brand": "MetroLux",
       "price": 2200
-    },
-    {
-      "id": "b3bd",
-      "title": "New cycle",
-      "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjx72ZVuS1a_QO9O-SsCx-nKo9GPP7hwTWbg&s",
-      "price": "3400",
-      "description": "This is the best cycle and very much long lasting. Anyone can use it easily",
-      "origin": "Chaina"
     }
   ]
 }
