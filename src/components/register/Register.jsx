@@ -1,10 +1,11 @@
 import { createUserWithEmailAndPassword, sendEmailVerification, updateProfile } from 'firebase/auth';
 import './Register.css'
 import auth from '../../firebase/firebase.config';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { FaEyeSlash } from 'react-icons/fa';
 import { IoEyeSharp } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../providers/AuthProvider';
 const Register = () => {
     const [registerError, setRegisterError] = useState(" ");
     const [success, setSuccess] = useState(" ");
@@ -16,8 +17,6 @@ const Register = () => {
         const name = e.target.name.value;
         const email = e.target.email.value;
         const pass = e.target.password.value;
-
-        
         
         //clear error/success message
         setRegisterError(' ');
@@ -32,10 +31,13 @@ const Register = () => {
 
 
         console.log(name, email, pass);
-        createUserWithEmailAndPassword(auth, email, pass)
+
+        const {createUser} = useContext(AuthContext)
+        createUser(email, pass)
         .then(res =>{
             console.log(res.user);
             setSuccess("User created Successfully");
+            e.target.reset();
 
             //update profile
             updateProfile(res.user, {

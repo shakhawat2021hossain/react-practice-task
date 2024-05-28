@@ -1,0 +1,93 @@
+{
+  "cycles": [
+    {
+      "id": 1,
+      "title": "Mountain Explorer",
+      "description": "A robust mountain bike perfect for off-road adventures.",
+      "img": "https://i.ibb.co/NnLxpBk/cy1.jpg",
+      "origin": "USA",
+      "brand": "Trailblazer",
+      "price": 1200
+    },
+    {
+      "id": 2,
+      "title": "City Cruiser",
+      "description": "A sleek and comfortable bike designed for urban commuting.",
+      "img": "https://i.ibb.co/sP1qcNS/cy2.jpg",
+      "origin": "Netherlands",
+      "brand": "UrbanRider",
+      "price": 800
+    },
+    {
+      "id": 3,
+      "title": "Speed Demon",
+      "description": "A lightweight road bike built for speed and performance.",
+      "img": "https://i.ibb.co/MNhD3My/cy3.webp",
+      "origin": "Italy",
+      "brand": "Veloci",
+      "price": 1500
+    },
+    {
+      "id": 4,
+      "title": "Eco Traveler",
+      "description": "An eco-friendly bike made from sustainable materials.",
+      "img": "https://i.ibb.co/w7yrDqR/cy4.webp",
+      "origin": "Germany",
+      "brand": "GreenRide",
+      "price": 1300
+    },
+    {
+      "id": 5,
+      "title": "Classic Commuter",
+      "description": "A timeless design with modern features for daily commuting.",
+      "img": "https://i.ibb.co/Tkzgw4R/cy5.webp",
+      "origin": "UK",
+      "brand": "HeritageCycles",
+      "price": 900
+    },
+    {
+      "id": 6,
+      "title": "Trail Blazer",
+      "description": "A versatile bike for both trails and urban environments.",
+      "img": "https://i.ibb.co/XzPR5Ww/cy6.webp",
+      "origin": "Canada",
+      "brand": "PathFinder",
+      "price": 1100
+    },
+    {
+      "id": 7,
+      "title": "Electric Glide",
+      "description": "A powerful e-bike for effortless riding and longer commutes.",
+      "img": "https://i.ibb.co/c6d8Ffr/c7.webp",
+      "origin": "China",
+      "brand": "Energize",
+      "price": 2000
+    },
+    {
+      "id": 8,
+      "title": "Adventure Seeker",
+      "description": "A durable bike designed for long-distance touring and adventures.",
+      "img": "https://i.ibb.co/sP1qcNS/cy2.jpg",
+      "origin": "Australia",
+      "brand": "OutbackCycles",
+      "price": 1700
+    },
+    {
+      "id": 9,
+      "title": "Urban Elite",
+      "description": "A high-end urban bike with premium features and materials.",
+      "img": "https://i.ibb.co/9cs1zqb/cy9.jpg",
+      "origin": "France",
+      "brand": "MetroLux",
+      "price": 2200
+    },
+    {
+      "id": "b3bd",
+      "title": "New cycle",
+      "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjx72ZVuS1a_QO9O-SsCx-nKo9GPP7hwTWbg&s",
+      "price": "3400",
+      "description": "This is the best cycle and very much long lasting. Anyone can use it easily",
+      "origin": "Chaina"
+    }
+  ]
+}

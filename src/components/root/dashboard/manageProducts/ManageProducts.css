@@ -1,0 +1,44 @@
+.manage-products{
+    display: inline-block;
+    width: 75%;
+    margin: 10px auto;
+}
+h1{
+    text-align: center;
+    font-size:xx-large;
+}
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.edit-btn{
+    background-color: #007bff;
+}
+.dlt-btn{
+    background-color: red;
+}
+
+.edit-btn:hover {
+    background-color: #0056b3;
+}
+.dlt-btn:hover {
+    background-color: #8a040b;
+}

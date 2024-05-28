@@ -4,6 +4,7 @@
     width: 100%;
     background: #615EFC;
     color: white;
+    margin-bottom: 20px;
 }
 .home-full{
     width: 90%;
@@ -23,4 +24,8 @@ h1{
     font-weight:400;
     font-style: normal;
     
+}
+
+.home-container Products{
+    background-color: white !important
 }

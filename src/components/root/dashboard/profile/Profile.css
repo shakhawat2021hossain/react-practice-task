@@ -1,0 +1,36 @@
+.profile{
+    display: inline-block;
+    width: 75%;
+    margin: 50px auto;
+}
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.profile-card__image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.profile-card__name {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.profile-card__email {
+    font-size: 1em;
+    color: #555;
+}

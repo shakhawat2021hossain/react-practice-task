@@ -2,14 +2,20 @@
 import { sendPasswordResetEmail, signInWithEmailAndPassword } from 'firebase/auth';
 import './Login.css';
 // import auth from '../../firebase/firebase.config';
-import { Link } from 'react-router-dom';
-import { useRef, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useContext, useRef, useState } from 'react';
 import auth from '../../firebase/firebase.config';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const Login = () => {
     const [success, setSuccess] = useState(' ');
     const [logInErr, setLogInErr] = useState(' ');
     const emailRef = useRef(null);
+
+    const {loginUser} = useContext(AuthContext)
+    // console.log(loginUser);
+
+    const navigate = useNavigate();
 
     const handleLogIn = (e) => {
         e.preventDefault();
@@ -22,12 +28,14 @@ const Login = () => {
         setLogInErr(' ');
 
 
-        signInWithEmailAndPassword(auth, email, pass)
+        loginUser(email, pass)
         .then(res => {
             const user = res.user;
             console.log(user);
             if(user.emailVerified){
                 setSuccess("User logged in Successfully");
+                e.target.reset();
+                navigate('/');
             }
             else{
                 alert("please verify your mail")

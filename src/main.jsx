@@ -14,6 +14,11 @@ import Login from './components/login/Login.jsx';
 import Home from './components/home/Home.jsx';
 import Register from './components/register/Register.jsx';
 import AuthProvider from './providers/AuthProvider.jsx';
+import PrivateRoute from './route/PrivateRoute.jsx';
+import Profile from './components/root/dashboard/profile/Profile.jsx';
+import Dashboard from './components/root/dashboard/mainDashboard/Dashboard.jsx';
+import ManageProducts from './components/root/dashboard/manageProducts/ManageProducts.jsx';
+import AddProducts from './components/root/dashboard/addProducts/AddProducts.jsx';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>
+      },
+      {
+        path: "/products",
+        element: <Products></Products>
       },
       {
         path: "/contact",
@@ -38,34 +47,28 @@ const router = createBrowserRouter([
         element: <Login></Login>
       },
       {
-        path: "/products",
-        element: <Products></Products>
+        path: "/dashboard",
+        element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+        children: [
+          {
+            path: "/dashboard",
+            element: <Profile></Profile>
+          },
+          {
+            path: "/dashboard/manage-products",
+            loader: () => fetch("http://localhost:3000/cycles"),
+            element: <ManageProducts></ManageProducts>
+          },
+          {
+            path: "/dashboard/add-products",
+            element: <AddProducts></AddProducts>
+          }
+        ]
       }
     ]
 
   },
 ]);
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <Root></Root>,
-//     children:[
-//       {
-//         path: '/contact',
-//         children: <Contact></Contact>
-//       },
-//       {
-//         path: '/products',
-//         children: <Products></Products>
-//       },
-//       {
-//         path: '/contact',
-//         children: <Contact></Contact>
-//       },
-//     ]
-//   },
-// ]);
-
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AuthProvider>

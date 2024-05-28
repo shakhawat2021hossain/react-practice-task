@@ -1,0 +1,11 @@
+.dashboard{
+    width: 100%;
+    display: flex;
+}
+SideBar{
+    width: 15%;
+
+}
+Outline{
+    width: 75%;
+}
