@@ -1,16 +1,25 @@
-import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useLoaderData } from 'react-router-dom';
 import './ManageProducts.css'
-import AddProducts from '../addProducts/AddProducts';
 import axios from 'axios';
 
 const ManageProducts = () => {
-    const products = useLoaderData();
-    // console.log(products);
+    const [products, setProducts] = useState([]);
+    async function loadData() {
+        const response = await fetch('http://localhost:3000/cycles')
+        const data = await response.json()
+        setProducts(data);      
+    }
+    useEffect(() =>{
+        loadData();
+    },[])
 
     const handleDelete = async (id) =>{
-        await axios.delete(`http://localhost:3000/cycles/${id}`)
+        await axios.delete(`http://localhost:3000/cycles/${id}`);
+        alert("Product Successfully Deleted");
+        loadData();
     }
+
     return (
         <div className='manage-products'>
             <h1>Manage Products</h1>
@@ -21,8 +30,7 @@ const ManageProducts = () => {
                         <th>Title</th>
                         <th>Price</th>
                         <th>Origin</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -32,8 +40,11 @@ const ManageProducts = () => {
                             <td>{item.title}</td>
                             <td>{item.price}</td>
                             <td>{item.origin}</td>
-                            <td><button className='edit-btn'>Edit</button></td>
-                            <td><button onClick={() => handleDelete(item.id)} className='dlt-btn'>Delete</button></td>
+
+                            <td className='action'>
+                                <button className='edit-btn'><Link to={`/dashboard/edit/${item.id}`}>Edit</Link></button>
+                                <button onClick={() => handleDelete(item.id)} className='dlt-btn'>Delete</button>
+                            </td>
                         </tr>
                     ))}
                 </tbody>

@@ -32,6 +32,9 @@ button {
 .edit-btn{
     background-color: #007bff;
 }
+.edit-btn a{
+    color: white;
+}
 .dlt-btn{
     background-color: red;
 }
@@ -41,4 +44,8 @@ button {
 }
 .dlt-btn:hover {
     background-color: #8a040b;
+}
+
+.action{
+    display: flex;
 }

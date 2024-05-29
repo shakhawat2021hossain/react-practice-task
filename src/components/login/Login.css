@@ -1,11 +1,10 @@
-/* src/Login.css */
 
 .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 500px;
+    margin: 0 auto;
     height: 90vh;
-    background-color: #f0f2f5;
+    margin-top: 100px;
+    /* background-color: #f0f2f5; */
 }
 
 .login-form {
@@ -50,6 +49,11 @@ button {
     color: white;
     font-size: 16px;
     cursor: pointer;
+}
+
+.login-btn{
+    margin-bottom: 10px;
+    
 }
 
 button:hover {

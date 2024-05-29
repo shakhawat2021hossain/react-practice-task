@@ -12,7 +12,7 @@ const Login = () => {
     const [logInErr, setLogInErr] = useState(' ');
     const emailRef = useRef(null);
 
-    const {loginUser} = useContext(AuthContext)
+    const {loginUser, googleSignIn} = useContext(AuthContext)
     // console.log(loginUser);
 
     const navigate = useNavigate();
@@ -70,6 +70,16 @@ const Login = () => {
         })
     }
 
+    const handleGoogleSignIn = () =>{
+        googleSignIn()
+        .then(res => {
+            console.log(res.user);
+            navigate('/');
+
+        })
+        .catch(err => console.log(err))
+    }
+
    
     return (
         <div className="login-container">
@@ -93,7 +103,7 @@ const Login = () => {
                     />
                 </div>
                 <p onClick={handleForgotPass} className='forgot'>Forgot password?</p>
-                <button type="submit">Login</button>
+                <button className='login-btn' type="submit">Login</button>
                 <p>Dont have any account? <Link to='/register'>Register</Link></p>
                 {
                     success && <p className='suc-msg'>{success}</p>
@@ -102,6 +112,9 @@ const Login = () => {
                     logInErr && <p className="err-msg">{logInErr}</p>
                 }
             </form>
+            <button onClick={handleGoogleSignIn}>Google Sign In</button>
+
+
             
         </div>
     );

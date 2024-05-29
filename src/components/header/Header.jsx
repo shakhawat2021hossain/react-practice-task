@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import './Header.css'
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
@@ -11,10 +11,10 @@ const Header = () => {
     }
     return (
         <div className="header">
-            <h1 className="logo">Cycle Hobe</h1>
+            <Link to='/' className="logo">Cycle Hobe</Link>
             <nav>
                 <NavLink to='/'>Home</NavLink>
-                <NavLink to='/products'>Product</NavLink>
+                <NavLink to='/products'>Products</NavLink>
                 <NavLink to='/contact'>Contact</NavLink>
                 {
                     user && <>

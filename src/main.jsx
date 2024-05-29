@@ -19,6 +19,8 @@ import Profile from './components/root/dashboard/profile/Profile.jsx';
 import Dashboard from './components/root/dashboard/mainDashboard/Dashboard.jsx';
 import ManageProducts from './components/root/dashboard/manageProducts/ManageProducts.jsx';
 import AddProducts from './components/root/dashboard/addProducts/AddProducts.jsx';
+import EditProduct from './components/root/dashboard/editProduct/EditProduct.jsx';
+import ProductDetails from './components/productDetails/ProductDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -33,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "/products",
         element: <Products></Products>
+      },
+      {
+        path: "/products/:id",
+        element: <ProductDetails></ProductDetails>
       },
       {
         path: "/contact",
@@ -62,6 +68,10 @@ const router = createBrowserRouter([
           {
             path: "/dashboard/add-products",
             element: <AddProducts></AddProducts>
+          },
+          {
+            path: "/dashboard/edit/:id",
+            element: <EditProduct></EditProduct>
           }
         ]
       }

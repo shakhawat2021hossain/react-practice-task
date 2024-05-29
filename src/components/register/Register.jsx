@@ -11,6 +11,9 @@ const Register = () => {
     const [success, setSuccess] = useState(" ");
     const [showPass, setShowPass] = useState(false)
 
+    const {createUser} = useContext(AuthContext)
+
+
     const handleRegister = (e) => {
         e.preventDefault();
         // console.log('form submitting');
@@ -30,12 +33,11 @@ const Register = () => {
 
 
 
-        console.log(name, email, pass);
+        // console.log(name, email, pass);
 
-        const {createUser} = useContext(AuthContext)
         createUser(email, pass)
         .then(res =>{
-            console.log(res.user);
+            // console.log(res.user);
             setSuccess("User created Successfully");
             e.target.reset();
 
